@@ -1,14 +1,38 @@
-class ZCL_2393_10_CHECK_AND_FILL2 definition
-  public
-  final
-  create public .
+CLASS zcl_2393_10_check_and_fill2 DEFINITION PUBLIC
+ FINAL
+ CREATE PUBLIC.
 
-public section.
-protected section.
-private section.
+  PUBLIC SECTION.
+    INTERFACES if_oo_adt_classrun.
+
 ENDCLASS.
 
 
 
 CLASS ZCL_2393_10_CHECK_AND_FILL2 IMPLEMENTATION.
+
+
+  METHOD if_oo_adt_classrun~main.
+
+     TYPES t_version TYPE lcl_generator=>t_version.
+
+*    CONSTANTS c_version TYPE t_version VALUE lcl_generator=>employee_table_only.
+    CONSTANTS c_version TYPE t_version VALUE lcl_generator=>with_relationships.
+*    CONSTANTS c_version TYPE t_version VALUE lcl_generator=>with_extensions.
+*
+    CONSTANTS c_employ_table  TYPE tabname VALUE 'ZDT_2393_04_EMPD'.
+    CONSTANTS c_depment_table TYPE tabname VALUE 'ZDT_2393_10_DEPT'.
+
+    TRY.
+        NEW lcl_generator( i_version       = c_version
+                           i_employ_table  = c_employ_table
+                           i_depment_table = c_depment_table
+                           i_out           = out
+                         )->run( ).
+
+      CATCH cx_abap_not_a_table INTO DATA(excp).
+        out->write(  |Error: {  excp->get_text( ) }| ).
+    ENDTRY.
+
+  ENDMETHOD.
 ENDCLASS.

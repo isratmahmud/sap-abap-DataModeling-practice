@@ -1,0 +1,10 @@
+@Metadata.layer: #CUSTOMER
+annotate entity ZCDS_2393_20_C_EMP_QUERY_P_MT
+    with parameters
+        @EndUserText.label: 'Currency Conversion Date mmmm' 
+        p_date
+{
+    @EndUserText.label: 'Department Assistant' 
+    assistantname;
+    
+}

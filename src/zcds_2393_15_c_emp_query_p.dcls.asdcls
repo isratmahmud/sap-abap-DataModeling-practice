@@ -1,0 +1,9 @@
+@EndUserText.label: 'Employee Query (Access Control)'
+@MappingRole: true
+define role ZCDS_2393_15_C_EMP_QUERY_P {
+    grant 
+        select
+            on
+                ZCDS_2393_15_C_EMP_QUERY_P
+                    where inheriting conditions from entity ZCDS_2393_11_R_EMPREL;
+}

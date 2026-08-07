@@ -1,0 +1,9 @@
+@EndUserText.label: 'Department Query (Access Control)'
+@MappingRole: true
+define role ZCDS_2393_16_C_DEPT_QUERY {
+    grant 
+        select
+            on
+                ZCDS_2393_16_C_DEPT_QUERY
+                    where inheriting conditions from entity ZCDS_2393_11_R_DEPT; 
+}

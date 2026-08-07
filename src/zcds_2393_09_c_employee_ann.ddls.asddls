@@ -1,7 +1,7 @@
 @AbapCatalog.viewEnhancementCategory: [#NONE]
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Employee (Consumption)'
-@Metadata.ignorePropagatedAnnotations: false
+@Metadata.ignorePropagatedAnnotations: false // here true or false can be used
 define view entity ZCDS_2393_09_C_EMPLOYEE_ANN as select from ZCDS_2393_08_R_EMPLOYEE_ANN
 {
     key Employeeid,

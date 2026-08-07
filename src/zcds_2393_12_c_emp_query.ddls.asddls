@@ -13,6 +13,7 @@ define view entity ZCDS_2393_12_C_EMP_QUERY as select from ZCDS_2393_11_R_EMPREL
     // it is a path expression
     _dept.Description as DeptDesc,
     _dept._assistant.LastName as AssistantLastName,
+     division(dats_days_between(EntryDate, $session.system_date),365,1)         as CompanyAffiliation,
 //    CreatedBy,
 //    CreatedAt,
 //    LocalLastChangedBy,

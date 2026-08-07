@@ -1,0 +1,14 @@
+@EndUserText.label: 'Department (Access Control),'
+@MappingRole: true
+define role ZCDS_2393_11_R_DEPT {
+    grant 
+        select
+            on
+                ZCDS_2393_11_R_DEPT
+                    where
+                        (Id) = aspect pfcg_auth(
+                        /LRN/DPMNT, 
+                        /LRN/DPMNT, 
+                        ACTVT = '03');
+                        
+}
